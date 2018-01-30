@@ -11,7 +11,7 @@ print("Hello world")
 
 --Fetch screen bounds
 local SCX,SCY,SCW,SCH=application:getLogicalBounds()
-local logo=Pixel.new(Texture.new(BOOTASSETS.LOGO_NAME,true),300,300))
+local logo=Pixel.new(Texture.new(BOOTASSETS.LOGO_NAME,true),300,300)
 logo:setAnchorPoint(0.5,0.5)
 logo:setPosition(SCX+SCW/2,SCY+SCH/2)
 stage:addChild(logo)
