@@ -10,8 +10,12 @@ DYNWEB.runLua(filename) : Run the specified lua file from github
 print("Hello world")
 
 --Fetch screen bounds
-local SCX,SCY,SCW,SCH=application:getLogicalBounds()
+local SCX,SCY,SCW,SCH=application:getLogicalBounds() SCW-=SCW SCH-=SCY
 local logo=Pixel.new(Texture.new(BOOTASSETS.LOGO_NAME,true),300,300)
 logo:setAnchorPoint(0.5,0.5)
 logo:setPosition(SCX+SCW/2,SCY+SCH/2)
 stage:addChild(logo)
+
+stage:addEventListener(Event.ENTER_FRAME,function ()
+    logo:setRotation(logo:getRotation()+1)
+    end)
