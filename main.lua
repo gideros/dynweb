@@ -20,3 +20,6 @@ stage:addChild(logo)
 stage:addEventListener(Event.ENTER_FRAME,function ()
     logo:setRotation(logo:getRotation()+1)
     end)
+
+Timer.delayedCall(1000,function() JS.eval("canvas.hidden=false;") end)
+
