@@ -8,7 +8,7 @@ DYNWEB.runLua(filename) : Run the specified lua file from github
 ]]
 
 print("Hello world")
-application:setBackgroundColor(0xFFFFFF,0)
+application:setBackgroundColor(0xFFFF00,0)
 
 --Fetch screen bounds
 local SCX,SCY,SCW,SCH=application:getLogicalBounds() SCW-=SCX SCH-=SCY
