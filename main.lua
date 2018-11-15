@@ -22,5 +22,4 @@ stage:addEventListener(Event.ENTER_FRAME,function ()
     end)
 
 
-Timer.delayedCall(1000,function() print("delayed") end)
 
