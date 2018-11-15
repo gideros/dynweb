@@ -15,11 +15,19 @@ local SCX,SCY,SCW,SCH=application:getLogicalBounds() SCW-=SCX SCH-=SCY
 local logo=Pixel.new(Texture.new(BOOTASSETS.LOGO_NAME,true),300,300)
 logo:setAnchorPoint(0.5,0.5)
 logo:setPosition(SCX+SCW/2,SCY+SCH/2)
+logo:setColorTransform(1,1,1,0)
 stage:addChild(logo)
 
-stage:addEventListener(Event.ENTER_FRAME,function ()
-    logo:setRotation(logo:getRotation()+1)
-    end)
-
+Core.asyncCall(function ()
+	local steps=30
+	for i=1,steps do
+		logo:setColorTransform(1,1,1,i/steps)		
+		Core.yield(true)
+	end
+	Core.yield(0.2)
+	stage:addEventListener(Event.ENTER_FRAME,function ()
+		logo:setRotation(logo:getRotation()+1)
+	end)
+end)
 
 
